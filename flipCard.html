@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        height:100vh;
+        background-color: #222;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+    .parent {
+        width: 250px;
+        height: 354px;
+     position: relative;
+     transition: all 1s linear;
+     transform-style: preserve-3d;
+       
+    }
+
+    .front,
+    .back {
+        height:100%;
+        width: 100%;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        font-family: 'lobster','cursive';
+       border-radius: 10px;
+       position: absolute;
+       
+    }
+    .front{
+        background:linear-gradient(#08aeea,#2af598);
+        z-index: 2;
+        backface-visibility:hidden;
+    }
+    .back{
+        background: linear-gradient(#f8d161,#ff5acd);
+        z-index: 1;
+        transform: rotateY(180deg);
+    }
+    .container:hover .parent{
+        transform:rotateY(180deg);
+    }
+    .container{
+        perspective:1000px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="parent">
+        <div class="front">Front</div>
+        <div class="back">Back</div>
+    </div>
+    </div>
+</body>
+
+</html>
